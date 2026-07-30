@@ -3,7 +3,8 @@ class Solution:
         count = dict(Counter(nums))
         result = []
         for i in range(k):
-            result.append(max(count, key=count.get))
-            count.pop(max(count, key=count.get), None)
+            biggest = max(count, key=count.get)
+            result.append(biggest)
+            count.pop(biggest, None)
         return result
         
